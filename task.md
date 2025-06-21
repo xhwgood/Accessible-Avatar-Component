@@ -1,4 +1,4 @@
-Task -Next.js 14 Remote lmage Optimization and Accessible Avatar Component with Tailored Loading Strategies
+Task -Next.js 14 Remote Image Optimization and Accessible Avatar Component with Tailored Loading Strategies
 # Scenario & Objectives
 Your project needs a robust and performant user profile component to display user avatars. These avatars may come from:
 
@@ -30,14 +30,21 @@ Your configuration must enable secure, scoped remote image support while allowin
 Create a TypeScript React component named Avatar.tsx that:
 # Functional Requirements:
 Accepts the following props:
-接口定义
+```ts
+type AvatarProps {
+  src?: string
+  alt: string
+  priority?: boolean
+  size?: number
+}
+```
 
 Uses a default local image if src is not provided
-import '' ……
+import defaultAvatar from '../public/avatar.png'
 
 Always sets:
   alt for accessibility
-  width /height explicitly to avoid layout shift
+  width/height explicitly to avoid layout shift
   priority only when necessary (e.g., profile image above the fold)
   A responsive placeholder( blurDataURL ) for better perceived performance
 
@@ -60,6 +67,6 @@ Bonus (if time allows):
 - Do not hardcode inline styles for accessibility-critical attributes.
 
 # Deliverables:
-- next.config.jssnippet
-- Avatar.tsxcomponent code
+- next.config.js snippet
+- Avatar.tsx component code
 - Inline comments describing performance and accessibility considerations
